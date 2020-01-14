@@ -1,0 +1,31 @@
+Codebuch: 
+id: die ersten zwei Bustaben der Vor- und Nachname
+name: Vor- und Nachname
+age of wiin:Alter: Alter in dem sie gewonnen haben 
+sex: Geschlecht ?  1 Weiblich, 2 Männlich, 3 Divers
+alive:tod/lebendig ? 1 tot, 2 lebendig, (bei den Toten? Berg wo sie gestorben sind + dieser Berg bei anderen gelisteten Kletterern)
+death montain: Todesberg Name, wenn lebendig Angabe NA
+death year: Todesjahr, wenn lebedig Angabe NA
+award year: Gewinnerjahr Piolets D?or
+mountain: Der Bergname für den ausgezeichnet wurde
+nationality: Nationalität 1 Österreich, 2 Kanada, 3 Schweiz, 4 Amerika (USA?), 5 Australien, 6 Frankreich, 7 Japan, 8 Russland, 9 England, 10 Slowenien, 11 Norwegen, 12 Belgien, 13 Tschechien, 14 Argentinien 
+climbing collegue: Personen die gemeinsam diesen Berg bestiegen haben
+
+Nodelist Berge
+id: b1 und folgende 
+name: Name des Berge 
+mountain range: Gebirge 
+country: Land des Gebirges 
+climber: Personen die diesen Berg bestiegen
+
+Wenn keine Angabe: NA
+
+
+
+
+
+
+
+
+
+
