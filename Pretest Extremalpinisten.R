@@ -1,0 +1,6 @@
+library(igraph)
+el <- read.csv("https://raw.githubusercontent.com/ns127/extremalpinisten/master/Nodelist%20Extremalpinisten%20-%20Edgelist%20Pre-Test.csv", header=T, as.is=T, sep=",")
+nodes <- read.csv("https://raw.githubusercontent.com/ns127/extremalpinisten/master/Nodelist%20Extremalpinisten%20-%20Nodelist%20Leute%20Pre-Test%20(1).csv", header=T, as.is=T, sep=",")
+ea_matrix <- as.matrix(el)
+ea <- graph_from_data_frame(d=ea_matrix, vertices=nodes, directed=FALSE)
+plot(ea)
