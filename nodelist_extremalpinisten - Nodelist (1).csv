@@ -1,0 +1,155 @@
+id,name,type,sex,nationality,mountain range,winner
+alce,Aleš Česen,1,2,10,99,1
+alho,Alex Honnold,1,2,4,99,1
+algu,Alexander Gukov,1,2,8,99,1
+alla,Alexander Lange,1,2,8,99,1
+allo,Alexey Lonchinsky,1,2,8,99,1
+anor,Andreas Orgler,1,2,1,99,1
+anst,Andrej Stremfelj,1,2,10,99,1
+anli,Andrew Lindblade,1,2,5,99,1
+anpa,Andy Parkin,1,2,9,99,1
+anmo,Antoine Moineville,1,2,6,99,1
+arwu,Arthur Wutscher,1,2,1,99,1
+atwh,Athol Whimp,1,2,5,99,1
+bedi,Ben Ditto,1,2,4,99,1
+begu,Benjamin Guigonnet,1,2,6,99,1
+bjar,Bjorn Eivind Artun,1,2,11,99,1
+bode,Boris Dedeshko,1,2,16,99,1
+bolo,Boris Lorencic,1,2,10,99,1
+brno,Bruce Normand,1,2,17,99,1
+clal,Club Alpin Francais,1,99,99,99,1
+dala,David Lama,1,2,1,99,1
+deur,Denis Urubko,1,2,16,99,1
+dijo,Didier Jourdain,1,2,6,99,1
+disi,Diego Simari,1,2,14,99,1
+dmgo,Dmitry Golovchenko,1,2,8,99,1
+dmgr,Dmitry Grigoriev,1,2,8,99,1
+frma,Francois Marcigny,1,2,6,99,1
+frwi,Freddie Wilkinson,1,2,4,99,1
+frde,Frederic Degoulet,1,2,6,99,1
+fuic,Fumitaka Ichimura,1,2,7,99,1
+grzi,Graham Zimmerman,1,2,5,99,1
+haau,Hansjoerg Auer,1,2,1,99,1
+hake,Hayden Kennedy,1,2,4,99,1
+hene,Heli Neswadba,1,2,1,99,1
+hemi,Helias Millerioux,1,2,6,99,1
+hima,Hiroyoshi Manome,1,2,7,99,1
+iawe,Ian Welsted,1,2,2,99,1
+iwwo,Iwan Wolf,1,2,3,99,1
+jebr,Jed Brown,1,2,4,99,1
+jero,Jess Roskelly,1,2,4,99,2
+jesu,Jerome Sullivan,1,2,4,99,1
+jowh,Josh Wharton,1,2,4,99,1
+juko,Juri Koschelenko,1,2,8,99,1
+kayo,Katsutaka Yokoyama,1,2,7,99,1
+kaam,Kazuki Amano,1,2,7,99,1
+kahi,Kazuya Hiraide,1,2,7,99,1
+keta,Kei Taniguchi,1,1,7,99,1
+kena,Kenro Nakajima,1,2,7,99,1
+kyde,Kyle Dempster,1,2,4,99,1
+lida,Lionel Daudet,1,2,6,99,1
+libi,Lise Billon,1,1,6,99,1
+luli,Luka Lindič,1,2,10,99,1
+lust,Luka Strazar,1,2,10,99,1
+mape,Manu Pellissier,1,2,6,99,1
+maho,Marek Holecek,1,2,13,99,1
+maal,Mark Allen,1,2,4,99,1
+mari,Mark Richey,1,2,4,99,1
+mapr,Marko Prezelj,1,2,10,99,1
+maau,Matthias Auer,1,2,1,99,1
+mipi,Michel Piola,1,2,3,99,1
+mifo,Mick Fowler,1,2,9,99,1
+myfo,Mychailo Fomin,1,2,18,99,1
+myba,Mykyta Balabanow,1,2,18,99,1
+nema,Nejc Marcic,1,2,10,99,1
+nibu,Nick Bullock,1,2,9,99,1
+nifa,Nicolas Favresse,1,2,12,99,1
+olli,Ole Lied,1,2,11,99,1
+olfa,Olivier Favresse,1,2,12,99,1
+para,Paul Ramsden,1,2,9,99,1
+rasl,Raphael Slawinski,1,2,2,99,1
+rial,Rick Allen,1,2,9,99,1
+ruex,Russische Expdition,1,99,8,99,1
+saal,Sandy Allan,1,2,9,99,1
+scad,Scott Adamson,1,2,4,99,2
+sevi,Sean Villanueva,1,2,12,99,1
+sefo,Sebastian Foissac,1,2,6,99,1
+sebo,Sebastien Bohin,1,2,6,99,1
+semo,Sebastien Moatti,1,2,6,99,1
+sera,Sebastien Ratel,1,2,6,99,1
+seni,Sergey Nilov,1,2,8,99,1
+sian,Simon Anthamatten,1,2,3,99,1
+stbe,Stéphane Benoist,1,2,6,99,1
+stho,Steve House,1,2,4,99,1
+stsw,Steve Swenson,1,2,4,99,1
+taao,Tatsuya Aoki,1,2,7,99,1
+thhu,Thomas Huber,1,2,15,99,1
+toli,Tom Livingstone,1,2,9,99,1
+tohu,Tomaz Humar,1,2,10,99,1
+toca,Tommy Caldwell,1,2,4,99,1
+uest,Ueli Steck,1,2,3,99,1
+urno,Urban Novak,1,2,10,99,1
+vafu,Vanja Furlan,1,2,10,99,1
+vian,Vince Anderson,1,2,4,99,1
+visp,Vincent Sprungli,1,2,6,99,1
+waba,Walerie Babanow,1,2,8,99,1
+yagr,Yannick Graziani,1,2,6,99,1
+yaha,Yasuhiro Hanatani,1,2,7,99,1
+yaok,Yasushi Okada,1,2,7,99,1
+yusa,Yusuke Sato,1,2,7,99,1
+zdha,Zdenek Hak,1,2,13,99,1
+zdhr,Zdenek Hruby,1,2,13,99,1
+b16,ama dablam,2,99,99,1,99
+b03,Annapurna,2,99,99,1,99
+b17,Burkett Needle,2,99,99,2,99
+b09,Cerro Kishtwar,2,99,99,1,99
+b10,Cerro Riso Patron,2,99,99,3,99
+b38,Cho Oyo,2,99,99,1,99
+b18,Chomolhari,2,99,99,1,99
+b19,Col D´Esperanza,2,99,99,3,99
+b11,Gave Ding,2,99,99,1,99
+b12,Hagshu,2,99,99,1,99
+b39,Hidden Peak,2,99,99,4,99
+b40,Jannu,2,99,99,1,99
+b02,K6 Westgipfel,2,99,99,4,99
+b41,K7 Westgipfel,2,99,99,4,99
+b42,Kalanka,2,99,99,1,99
+b20,Kamet,2,99,99,1,99
+b21,Kangchendzoenga,2,99,99,1,99
+b01,Kunyang Chhish,2,99,99,4,99
+b05,Kyashar,2,99,99,1,99
+b43,Latok 1,2,99,99,4,99
+b44,Lunag Ri,2,99,99,1,99
+b45,lupghar sar west,2,99,99,4,99
+b22,Makalu,2,99,99,1,99
+b23,Meru,2,99,99,1,99
+b24,Mount Bradley,2,99,99,5,99
+b04,Mount Laurens,2,99,99,6,99
+b46,Mount Logan,2,99,99,7,99
+b06,Muztagh Tower,2,99,99,4,99
+b08,Nanga Parbat,2,99,99,1,99
+b47,Nuptse 2,2,99,99,1,99
+b25,Nuptse Shar 1,2,99,99,1,99
+b48,Nyainqentanglha,2,99,99,1,99
+b07,Ogre,2,99,99,4,99
+b26,Pamir,2,99,99,1,99
+b27,Saser Kangri 2,2,99,99,4,99
+b28,Shispare,2,99,99,4,99
+b29,Shiva,2,99,99,1,99
+b30,Shivling,2,99,99,1,99
+b31,Siguniang Shan,2,99,99,8,99
+b13,Talung,2,99,99,1,99
+b32,Tengkangpoche,2,99,99,1,99
+b33,Thalay Sagar,2,99,99,1,99
+b14,Thamserku,2,99,99,1,99
+b15,The Fitz Traverse,2,99,99,3,99
+b34,Tingmiakulugssuit,2,99,99,9,99
+b35,Torre Egger,2,99,99,3,99
+b36,Torres Del Paine ,2,99,99,3,99
+b37,Xuelian Feng,2,99,99,10,99
+b50,Howse Peak,2,99,99,12,99
+b49,Kjerag Mountain,2,99,99,11,99
+b51,Langtang Lirung,2,99,99,1,99
+b52,Mojstrovka,2,99,99,13,99
+b53,Darran Mountain,2,99,99,14,99
+b54,Mount Kurodake,2,99,99,15,99
