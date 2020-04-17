@@ -1,0 +1,24 @@
+Codebuch 
+
+Nodelist:
+id (people): Die ersten zwei Buchstaben des Vornamens + die ersten zwei Buchstaben des Nachnamens
+id (mountains): b1, b2, b3...
+name (people): Vorname + Nachname (Großschreiben)
+name (mountains): vollständiger Name von Berg, für den die Person den Preis bekommen hat (Großschreiben) 
+type: 1=Mensch 2=Berg
+sex: 1=weiblich 2=männlich 3=divers
+nationality: 1=Österreich 2=Kanada 3=Schweiz 4=USA 5=Australien 6=Frankreich 7=Japan     8=Russland 9=England 10=Slowenien 11=Norwegen 12=Belgien 13=Tschechien 14=Argentinien 15=Deutschland 16=Kasachstan 17=Schottland 18=Ukraine 
+mountainrange: Gebirge, in dem der Berg liegt 1=Himalaya 2=Boundary Ranges 3=Anden 4=Karakorum 5=Sierra Nevada 6=Alaskakette 7=Eliaskette 8=Qionglai Shan 9=Grönland 10=Tian Shan 11=Skandinavisches Gebirge 12=Rocky Mountains 13=Alpen 14= Fiordland National Park 15=Ishikari Mountains
+
+winner: Gewinner=1, kein Gewinner, aber relevante Person=2
+wenn keine Angabe: 99
+Edgelist:
+id (people): Die ersten zwei Buchstaben des Vornamens + die ersten zwei Buchstaben des Nachnamens
+id (mountains): b1, b2, b3...
+from...to: Beziehung von ... zu...
+relation: 1=Gewinnerberg 2=Todesberg 3=Seilschaft
+deathyear: Jahr reinschreiben JJJJ
+→ Natürliche Tode werden nicht aufgezeigt, nur wenn sie auf einem Berg beim Klettern gestorben sind
+awardyear: Jahr reinschreiben JJJJ
+wenn keine Angabe: 99
+alles klein schreiben, KEINE Leerzeichen, KEINE Sonderzeichen 
