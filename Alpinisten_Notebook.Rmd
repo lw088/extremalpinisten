@@ -1,0 +1,215 @@
+---
+title: "Extrem-Alpinisten"
+author: "sws coaching"
+output: html_notebook
+---
+
+```{r Erstellt unser Netzwerk, message=FALSE, warning=FALSE, paged.print=TRUE}
+library(igraph)
+el <- read.csv("https://raw.githubusercontent.com/ns127/extremalpinisten/master/edgelist_extremalpinisten.csv", header=T, as.is=T, sep=",")
+nodes <- read.csv("https://raw.githubusercontent.com/ns127/extremalpinisten/master/nodelist_extremalpinisten_allcaps.csv", header=T, as.is=T, sep=",")
+ea_matrix <- as.matrix(el)
+ea <- graph_from_data_frame(d=ea_matrix, vertices=nodes, directed=FALSE)
+ea
+```
+
+Analyse: ungerichtetet two-mode Netzwerk mit 154 Knoten und 224 Kanten
+
+```{r Attribute analysieren, message=FALSE, warning=FALSE}
+list.edge.attributes(ea)
+list.vertex.attributes(ea)
+```
+
+Problem: Ihre Attribute relation, awardyear und deathyear sind nicht numerisch kodiert.
+
+
+
+```{r Visualisierungen definieren}
+#Farben für Geschlecht und Berg
+V(ea)[V(ea)$sex == 1]$color <- "pink" #weiblich
+V(ea)[V(ea)$sex == 2]$color <- "lightblue" #maennlich
+V(ea)[V(ea)$sex == 99]$color <- "grey80" #Berg
+
+#Form für Menschen und Berge festlegen
+V(ea)[V(ea)$type == 1]$shape <- "circle" #Mensch
+V(ea)[V(ea)$type == 2]$shape <- "square" #Berg
+```
+
+```{r erste Visualisierung, fig.height=10, fig.width=16}
+plot(ea,
+     layout=layout_in_circle,
+     edge.arrow.size=.3,
+     main="Extremalpinisten",
+     vertex.size=5,
+     vertex.label=NA,
+     vertex.frame.color=NA)
+```
+
+# Teilnetzwerke selektieren
+
+```{r Teilnetzwerk Frauen}
+vertex.attributes(ea)$sex
+ea_fem <- delete_vertices(ea, V(ea)[sex != 1])
+ea_fem
+plot(ea_fem,
+     layout=layout_with_kk,
+     edge.arrow.size=.3,
+     main="Extremalpinisten (weiblich)",
+     vertex.color="pink",
+     vertex.size=50,
+     vertex.frame.color= "black",
+     vertex.label.color= "black",
+     sub="pink=weiblich grau=Berg")
+```
+
+Interpretation: Unter den Gewinnern sind nur zwei Frauen, die jeweils auch keinen Kontakt untereinander haben. Es scheint keine Frauenbeziehung oder Sport zu sehen.
+
+
+```{r Isolates löschen}
+
+# Isolates festlegen
+# wir suchen diejenigen Knoten, die einen Degree-Wert von 0 haben.
+
+isolated <- which(degree(ea_fem)==0)
+isolated
+
+# wir löschen jetzt alle Knoten aus dem Netzwerk, die die Bedingung "isolated" erfüllen und generieren das neue Netzwer ea_fem_clean
+ea_fem_clean <- delete.vertices(ea_fem, isolated)
+ea_fem_clean
+vertex.attributes(ea_fem_clean)$sex
+
+# Plot
+plot(ea_fem_clean,
+     layout=layout_with_kk,
+     edge.arrow.size=.3,
+     main="Extremalpinisten (weiblich) ohne              Isolates",
+     vertex.size=15,
+     vertex.frame.color=NA,
+     sub="red=weiblich, grau=Berg")
+
+```
+
+# Auswahl von Nationalitäten
+
+Codebuch
+https://github.com/ns127/extremalpinisten/blob/master/codebuch%20markdown.Rmd
+
+
+
+```{r Nur Amerikaner, fig.height=6, fig.width=10, warning=FALSE, paged.print=FALSE}
+ea
+list.vertex.attributes(ea)
+vertex.attributes(ea)$nationality
+
+# Codebuch https://github.com/ns127/extremalpinisten/blob/master/codebuch%20markdown.Rmd
+# Amerikaner sind mit "4" codiert
+
+# Wenn Sie jetzt mit ungleich 4 alles löschen, löschen Sie natürlich auch alle 99 Berge mit. Deshalb müssen Sie mit der logischen Verknüpfung und arbeiten. Dann bleiben alle Berge Amerikaner, aber auch alle Berge.
+
+usa <- delete_vertices(ea, V(ea)[nationality!= "4" & nationality!= "99"])
+
+# Damit Sie nur die Verbindung der Berge und der amerikanische Seilschaften übrig bleibt, müssen Sie wie oben wieder alle Berge mit dem Degree = 0 löschen.
+iso_usa <- which(degree(usa)==0)
+usa_clean <- delete.vertices(usa, iso_usa)
+
+# Jetzt haben Sie ein Netzwerk mit den amerikanischen Seilschaften und den bestiegenen Bergen.
+usa_clean
+
+plot(usa_clean,
+     layout=layout_with_fr,
+     edge.arrow.size=.3,
+     main="Amerikanische Alpinisten mit bestiegenen Bergen",
+     vertex.size=degree(usa_clean, mode="all")*5,
+     vertex.label.dist=.8,
+     vertex.label.degree=0,
+     vertex.label.cex=.6,
+     vertex.label.family="Helvetica",
+     vertex.label.font=2,
+     vertex.label.color="black",
+     #vertex.label=NA,
+     #vertex.frame.color=NA,
+     sub="blau = männlich pink= weiblich grau= Berg")
+```
+
+Interpretation:
+Kyle Dempster scheint einer der erfolgreichsten amerikanischen Kletterer zu sein (hoher Degree-Wert).
+
+
+```{r Nur Todesberge, fig.height=6, fig.width=10, warning=FALSE, paged.print=FALSE}
+#Teilnetzwerke nach Todesbergen relation=2
+sg_tb <-subgraph.edges(ea, E(ea)[relation=="2"])
+
+#Netzwerk plotten
+plot (sg_tb,
+      layout=layout_with_fr,
+      main="Todesberge mit Verunglückten",
+      edge.arrow.size=.4,
+      vertex.size=degree(sg_tb, mode="all")*10,
+      vertex.label.degree=0,
+      vertex.label.dist=.8,
+      vertex.label.cex=.60,
+      vertex.label.font=1,
+      vertex.label.color="black",
+      sub= "blau= männlich pink= weiblich grau= Berg")
+      
+      
+```
+Interpretation Howse Peak scheint der Endgegner für die Kletterer zu sein. Hier sind von 12 Verstorbenen 3 umgekommen.
+
+
+
+
+```{r Egonetzwerk Keta, fig.height=6, fig.width=10, warning=FALSE, paged.print=FALSE}
+#Nach Frauen filtern
+sg_wo <- delete_vertices(ea, V(ea)[sex!="1"])
+
+
+#Netzwerk plotten
+plot (sg_wo,
+      layout=layout_with_fr,
+      main="Extremalpinisten Frauen",
+      edge.arrow.size=.3,)
+      
+#Ego Netzwerk erstellen Kei Taniguchi
+ego_keta <- make_ego_graph(ea, order=1, nodes= V(ea)$name=="Kei Taniguchi", mode="all")
+ego_keta1 <- ego_keta[[1]]
+
+#Netzwerk plotten
+plot(ego_keta1,
+      layout=layout_with_fr,
+      main="Egonetzwerk Kei Taniguchi",
+      edge.arrow.size=.3,
+      vertex.size=degree(ego_keta1, mode="all")*10,
+      vertex.label.degree=0,
+      vertex.label.dist=.8,
+      vertex.label.cex=.60,
+      vertex.label.font=1,
+      vertex.label.color="black",
+      sub= "blau= männlich pink= weiblich grau= Berg")
+      
+
+
+```
+Als eine der wenigen Frauen bekletterte Sie in nur zu zweit den Kamet und starb darauf bei einem Berg Unglück.
+
+
+```{r Egonetzwerk Lise Billon, fig.height=6, fig.width=10, warning=FALSE, paged.print=FALSE}
+
+#Ego Netzwerk erstellen Lise Billon
+ego_libi <- make_ego_graph(ea, order=1, nodes= V(ea)$name=="Lise Billon", mode="all")
+ego_libi1 <- ego_libi[[1]]
+
+#Netzwerk plotten
+plot(ego_libi1,
+      layout=layout_with_fr,
+      main="Egonetzwerk Kei Taniguchi",
+      edge.arrow.size=.3,
+      vertex.size=degree(ego_libi1, mode="all")*10,
+      vertex.label.degree=0,
+      vertex.label.dist=.8,
+      vertex.label.cex=.60,
+      vertex.label.font=1,
+      vertex.label.color="black",
+      sub= "blau= männlich pink= weiblich grau= Berg")
+      
+
